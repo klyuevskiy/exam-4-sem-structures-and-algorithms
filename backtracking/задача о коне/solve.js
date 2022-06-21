@@ -31,20 +31,18 @@ function findPath(matrix, n, x0, y0) {
   tryFind(2, x0, y0);
 }
 
-(function presentation() {
-  function input(message) {
-    return Number.parseInt(prompt(message));
-  }
+function input(message) {
+  return Number.parseInt(prompt(message));
+}
 
-  const n = input("Введите размеры матрицы");
+const n = input("Введите размеры матрицы");
 
-  const matrix = new Array(n);
-  for (let i = 0; i < n; i++) matrix[i] = new Array(n);
+const matrix = new Array(n);
+for (let i = 0; i < n; i++) matrix[i] = new Array(n);
 
-  const x0 = input("Введите x"),
-    y0 = input("Введите y");
+const x0 = input("Введите x"),
+  y0 = input("Введите y");
 
-  findPath(matrix, n, x0, y0);
+findPath(matrix, n, x0, y0);
 
-  matrix.forEach((arr) => console.log(arr));
-})();
+matrix.forEach((arr) => console.log(arr));

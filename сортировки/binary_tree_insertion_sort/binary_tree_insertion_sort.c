@@ -21,4 +21,6 @@ void binary_tree_insertion_sort(int *arr, int size)
 
     int index = 0;
     inorder(root, arr, &index);
+
+    delete_binary_tree(root);
 }

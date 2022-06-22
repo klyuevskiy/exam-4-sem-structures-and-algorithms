@@ -1,5 +1,4 @@
 #include "heap_sort.h"
-#include <stdlib.h>
 
 #define swap(type, a, b) \
     {                    \

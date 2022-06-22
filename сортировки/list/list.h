@@ -11,7 +11,6 @@ typedef struct list_node list_node;
 
 list_node *create_list_node(int data);
 list_node *add_order_to_list(list_node *head, int data);
-list_node *delete_list(list_node *head);
-int pop(list_node *head);
+void delete_list(list_node *head);
 
 #endif

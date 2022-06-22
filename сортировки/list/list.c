@@ -37,13 +37,11 @@ list_node *add_order_to_list(list_node *head, int data)
     return head;
 }
 
-list_node *delete_list(list_node *head)
+void delete_list(list_node *head)
 {
     if (head == NULL)
-        return NULL;
+        return;
 
     delete_list(head->next);
     free(head);
-
-    return NULL;
 }

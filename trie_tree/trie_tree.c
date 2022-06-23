@@ -18,14 +18,13 @@ trie_tree_node *add_to_trie_tree(trie_tree_node *root, char *key, int offset)
         root = create_trie_tree_node();
 
     if (key[offset] == '\0')
-    {
         root->end_of_word = 1;
-        return root;
+    else
+    {
+        int child = tolower(key[offset]) - 'a';
+        root->childs[child] = add_to_trie_tree(root->childs[child], key, offset + 1);
     }
 
-    int child = tolower(key[offset]) - 'a';
-
-    root->childs[child] = add_to_trie_tree(root->childs[child], key, offset + 1);
     return root;
 }
 

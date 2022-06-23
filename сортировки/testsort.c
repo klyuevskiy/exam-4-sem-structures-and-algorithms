@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "insertion_sort\insertion_sort.h"
+#include "radix_sort\radix_sort.h"
 
 int main()
 {
-    int arr[] = {2, 5, 2, 1, 4, 3, 9, 0},
+    int arr[] =
+        {41, 67, 34, 0, 69, 24, 78, 58, 62, 64, 5, 45, 81, 27, 61, 91, 95, 42, 27, 36},
         size = sizeof(arr) / sizeof(*arr);
 
-    list_insertion_sort(arr, size);
+    radix_sort(arr, size);
     for (int *i = arr; i != arr + size; i++)
     {
         printf("%d ", *i);

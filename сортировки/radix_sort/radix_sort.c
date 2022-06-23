@@ -7,9 +7,12 @@
         b = t;           \
     }
 
-void help_sort(int *arr, int size, int bit)
+void help_sort(int *arr, int left, int right, int bit)
 {
-    int i = 0, j = size - 1;
+    if (left >= right || !bit)
+        return;
+
+    int i = left, j = right;
 
     while (i < j)
     {
@@ -29,16 +32,11 @@ void help_sort(int *arr, int size, int bit)
     while (arr[i] & bit)
         i--;
 
-    if (!(bit >>= 1))
-        return;
-
-    if (i > 0)
-        help_sort(arr, i + 1, bit);
-    if (size - i - 1 > 1)
-        help_sort(arr + i + 1, size - i - 1, bit);
+    help_sort(arr, left, i, bit >> 1);
+    help_sort(arr, i + 1, right, bit >> 1);
 }
 
 void radix_sort(int *arr, int size)
 {
-    help_sort(arr, size, 1 << (sizeof(int) * 8 - 2));
+    help_sort(arr, 0, size - 1, 1 << (sizeof(int) * 8 - 2));
 }

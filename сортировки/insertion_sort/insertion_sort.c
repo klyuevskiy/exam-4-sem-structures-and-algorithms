@@ -1,4 +1,6 @@
 #include "insertion_sort.h"
+#include "..\list\list.h"
+#include <stdlib.h>
 
 void simple_insertion_sort(int *arr, int size)
 {
@@ -39,4 +41,18 @@ void binary_insertion_sort(int *arr, int size)
 
         arr[insert_pos] = num;
     }
+}
+
+void list_insertion_sort(int *arr, int size)
+{
+    list_node *head = NULL;
+
+    for (int *it = arr; it != arr + size; it++)
+        head = add_order_to_list(head, *it);
+
+    int j = 0;
+    for (list_node *it = head; it != NULL; it = it->next)
+        arr[j++] = it->data;
+
+    delete_list(head);
 }

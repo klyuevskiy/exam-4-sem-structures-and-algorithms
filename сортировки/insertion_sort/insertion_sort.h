@@ -3,5 +3,6 @@
 
 void simple_insertion_sort(int *arr, int size);
 void binary_insertion_sort(int *arr, int size);
+void list_insertion_sort(int *arr, int size);
 
 #endif

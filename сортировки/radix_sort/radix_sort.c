@@ -29,11 +29,16 @@ void help_sort(int *arr, int left, int right, int bit)
         }
     }
 
-    while (arr[i] & bit)
-        i--;
-
-    help_sort(arr, left, i, bit >> 1);
-    help_sort(arr, i + 1, right, bit >> 1);
+    if (arr[i] & bit)
+    {
+        help_sort(arr, left, i - 1, bit >> 1);
+        help_sort(arr, i, right, bit >> 1);
+    }
+    else
+    {
+        help_sort(arr, left, i, bit >> 1);
+        help_sort(arr, i + 1, right, bit >> 1);
+    }
 }
 
 void radix_sort(int *arr, int size)

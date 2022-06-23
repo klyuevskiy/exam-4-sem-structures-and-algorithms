@@ -1,4 +1,4 @@
-#include "internal_chains\hash.h"
+#include "external_chains\hash.h"
 #include <stdio.h>
 
 int hash(int key)
@@ -8,7 +8,7 @@ int hash(int key)
 
 int main()
 {
-    hash_table *table = create_hash_table(100, hash);
+    hash_table *table = create_hash_table(10, hash);
 
     add_to_hash_table(table, 120);
     add_to_hash_table(table, 20);

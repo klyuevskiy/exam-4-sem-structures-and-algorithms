@@ -37,6 +37,53 @@ list_node *add_order_to_list(list_node *head, int data)
     return head;
 }
 
+list_node *add_to_head(list_node *head, int data)
+{
+    list_node *node = create_list_node(data);
+    node->next = head;
+    return node;
+}
+
+list_node *remove_from_list(list_node *head, int data)
+{
+    if (head == NULL)
+        return NULL;
+
+    if (head->data == data)
+    {
+        list_node *t = head;
+        head = head->next;
+        free(t);
+
+        return head;
+    }
+
+    list_node *prev = head, *cur = head->next;
+
+    while (cur != NULL && cur->data != data)
+    {
+        prev = cur;
+        cur = cur->next;
+    }
+
+    if (cur != NULL)
+    {
+        prev->next = cur->next;
+        free(cur);
+    }
+
+    return head;
+}
+
+char find_in_list(list_node *head, int data)
+{
+    for (head; head != NULL; head = head->next)
+        if (head->data == data)
+            return 1;
+
+    return 0;
+}
+
 void delete_list(list_node *head)
 {
     if (head == NULL)

@@ -1,5 +1,5 @@
 #include "double_way_insertion_sort.h"
-#include "..\list\list.h"
+#include "..\..\list\list.h"
 #include <stdlib.h>
 
 int get_median(int *arr, int size)

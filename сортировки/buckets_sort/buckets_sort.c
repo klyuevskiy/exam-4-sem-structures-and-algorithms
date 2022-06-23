@@ -1,5 +1,5 @@
 #include "buckets_sort.h"
-#include "list/list.h"
+#include "..\..\list\list.h"
 #include <stdlib.h>
 
 #define max(a, b) (a > b ? a : b)

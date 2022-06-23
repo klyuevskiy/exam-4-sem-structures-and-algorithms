@@ -11,9 +11,9 @@ void simple_insertion_sort(int *arr, int size)
     }
 }
 
-int find_insert_position(int *arr, int elem, int right_board)
+int find_insert_position(int *arr, int elem, int right_bound)
 {
-    int l = 0, r = right_board;
+    int l = 0, r = right_bound;
 
     while (l < r)
     {

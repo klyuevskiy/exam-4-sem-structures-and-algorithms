@@ -17,4 +17,8 @@ char find_in_trie_tree(trie_tree_node *root, char *key, int offset);
 trie_tree_node *remove_from_trie_tree(trie_tree_node *root, char *key, int offset);
 void delete_trie_tree(trie_tree_node *root);
 
+trie_tree_node *iterative_add_to_trie_tree(trie_tree_node *root, char *key, int offset);
+char iterative_find_in_trie_tree(trie_tree_node *root, char *key, int offset);
+trie_tree_node *iterative_remove_from_trie_tree(trie_tree_node *root, char *key, int offset);
+
 #endif

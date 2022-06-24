@@ -142,9 +142,9 @@ void quiksort_iterative_knut(int *arr, int size)
 
         while (i <= j)
         {
-            while (i <= j && arr[i] < support)
+            while (arr[i] < support)
                 i++;
-            while (i < j && arr[j] > support)
+            while (arr[j] > support)
                 j--;
 
             if (i <= j)
